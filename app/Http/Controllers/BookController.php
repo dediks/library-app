@@ -11,14 +11,14 @@ class BookController extends Controller
     {
         $book = Book::create($this->validateRequest());
 
-        return redirect('/books/' . $book->id);
+        return redirect($book->path());
     }
 
     public function update(Book $book)
     {
         $book->update($this->validateRequest());
 
-        return redirect('/books/' . $book->id);
+        return redirect($book->path());
     }
 
     public function destroy(Book $book)
